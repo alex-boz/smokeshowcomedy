@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Original+Surfer&display=swap');
+@import url('../css/ssc_mobile_styles.css');
 
 :root{
     --font-headline: 'Original Surfer', sans-serif;
@@ -31,6 +32,7 @@ html{
     padding: 0;
     width: 100vw;
     height: 100vh;
+    scroll-behavior: smooth;
 }
 
 body{

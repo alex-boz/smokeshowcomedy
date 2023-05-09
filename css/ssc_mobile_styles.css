@@ -1,0 +1,11 @@
+@media only screen and (max-width: 414px){
+    section{ padding: 20px !important; }
+    #insta-wrapper h3{ font-size: 1.3rem !important; }
+    #insta-sub-header{ font-size: 1rem !important; }
+
+    #insta-inner-wrapper{ display: block !important; }
+    .insta-post-wrapper{ margin-bottom: 40px !important; }
+    .insta-post-wrapper:last-child{ margin-bottom: 0 !important; }
+
+    header nav{ font-size: 1rem; }
+}

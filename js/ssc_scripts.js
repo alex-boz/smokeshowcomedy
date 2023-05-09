@@ -46,6 +46,7 @@ const getSiteData = async () => {
 const setHeader = async (siteData) => {
     setInfo(siteData.info);
     setLogo();
+    setNav();
 }
 
 const setInfo = (showInfo) => {
@@ -64,6 +65,13 @@ const setLogo = () => {
     logo.id = 'logo';
 
     el.header.append(logo);
+}
+
+const setNav = () => {
+    const nav = document.createElement('nav');
+    nav.innerHTML = `<a href='#about'>About</a> | <a href="#insta-wrapper">Media</a> | <a href="#social">Socials</a>`;
+
+    el.header.append(nav);
 }
 
 const setAbout = async (siteAbout) => {
