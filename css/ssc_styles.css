@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Original+Surfer&display=swap');
+
+:root{
+    --font-headline: 'Original Surfer', sans-serif;
+    --font-body: 'Noto Sans', sans-serif;
+
+    --hex-blue-dark: #235354;
+    --hex-blue-medium: #3E9294;
+    --hex-blue-light: #8acfd1;
+    --hex-blue-lighter: #a7fafd;
+    --hex-red-dark: #800B0B;
+    --hex-red-medium: #ff1616;
+    --hex-red-light: #FF6363;
+
+    --hex-gray: #dbdbdb;
+
+    --hex-black: #141D1A;
+    --hex-white: #fff;
+    --hex-gold: #FFC45E;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+body,
+html{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--hex-blue-light);
+    font-family: var(--font-body);
+}
+
+a, a:active{
+    color: var(--hex-red-dark);
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    color: var(--hex-blue-dark);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 5px;
+}
+
+#info,
+nav{
+    background-color: var(--hex-blue-medium);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: .8rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--hex-black);
+    padding: 5px;
+}
+
+nav{
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    color: var(--hex-blue-light);
+}
+
+#info a,
+#info a:active,
+nav a,
+nav a:active{
+    color: var(--hex-red-dark);
+    text-decoration: none;
+}
+
+#info a:hover,
+#info a:active,
+nav a:hover,
+nav a:active{
+    color: var(--hex-blue-dark);
+}
+
+#logo{
+    width: 250px;
+    height: 250px;
+    background-image: url('../img/logo.png');
+    background-position: center center;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+section{ background-color: var(--hex-black); }
+
+.section-wrapper{
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--hex-blue-light);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .7);
+}
+
+.section-wrapper h2{
+    margin: 0 0 20px 0;
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    color: var(--hex-red-dark);
+}
+
+.section-inner-wrapper{
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-shadow: 0 1px 0 var(--hex-blue-lighter);
+}
+
+#insta-wrapper{
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--hex-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#insta-wrapper h3{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--hex-red-dark);
+    margin-bottom: 5px;
+}
+
+#insta-wrapper #insta-sub-header{
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+#insta-inner-wrapper{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px 20px 20px;
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 5px;
+}
+
+#insta-inner-wrapper .insta-post-wrapper img{
+    width: 100%;
+    height: auto;
+}
+
+#insta-inner-wrapper .insta-post-wrapper .insta-post-caption{
+    background-color: var(--hex-gray);
+    padding: 10px;
+    text-shadow: 0 1px 0 var(--hex-white);
+}
