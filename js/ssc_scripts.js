@@ -6,7 +6,9 @@ const c = {
 // DOM
 const el = {
     info: document.getElementById('info'),
-    section: document.querySelector('section')
+    header: document.querySelector('header'),
+    section: document.querySelector('section'),
+    footer: document.querySelector('footer')
 }
 
 /*
@@ -16,19 +18,20 @@ const el = {
 */
 
 const init = async () => {
-    const siteData = await getSiteData();
-    const showInfo = siteData.info;
-    const siteAbout = siteData.about;
     const instaFeed = await getInstaPosts();
 
-    console.log(instaFeed);
+    const siteData = await getSiteData();
+    const siteAbout = siteData.about;
+    const siteSocial = siteData.social;
 
-    setInfo(showInfo);
-    setAbout(siteAbout);
+    await setHeader(siteData);
+    await setAbout(siteAbout);
 
     if( Object.keys(instaFeed).length > 3 ){
-        setInstaFeed(instaFeed);
+       await setInstaFeed(instaFeed);
     }
+
+    setSocial(siteSocial);
 }
 
 const getSiteData = async () => {
@@ -40,17 +43,35 @@ const getSiteData = async () => {
             })
 }
 
-const setInfo = (showInfo) => {
-    el.info.innerHTML += `${showInfo.when} | `;
-    el.info.innerHTML += `${showInfo.time} | `;
-    el.info.innerHTML += `${showInfo.address}`;
+const setHeader = async (siteData) => {
+    setInfo(siteData.info);
+    setLogo();
 }
 
-const setAbout = (siteAbout) => {
+const setInfo = (showInfo) => {
+    const infoWrapper = document.createElement('div');
+    infoWrapper.id = 'info';
+
+    infoWrapper.innerHTML += `${showInfo.when} | `;
+    infoWrapper.innerHTML += `${showInfo.time} | `;
+    infoWrapper.innerHTML += `${showInfo.address}`;
+
+    el.header.append(infoWrapper);
+}
+
+const setLogo = () => {
+    const logo = document.createElement('div');
+    logo.id = 'logo';
+
+    el.header.append(logo);
+}
+
+const setAbout = async (siteAbout) => {
     const aboutWrap = document.createElement('div');
     aboutWrap.id = 'about';
     aboutWrap.classList.add('section-wrapper');
     aboutWrap.classList.add('about-wrapper');
+    aboutWrap.setAttribute('data-aos', 'fade-up');
 
     const aboutHeader = document.createElement('h2');
     aboutHeader.innerText = 'About the Show';
@@ -66,9 +87,10 @@ const setAbout = (siteAbout) => {
     el.section.append(aboutWrap);
 }
 
-const setInstaFeed = (instaFeed) => {
+const setInstaFeed = async (instaFeed) => {
     const instaWrap = document.createElement('div');
     instaWrap.id = 'insta-wrapper';
+    instaWrap.setAttribute('data-aos', 'fade-up');
 
     const instaHeader = document.createElement('h3');
     instaHeader.innerText = '~ Look At How Fun We Are ~';
@@ -102,6 +124,17 @@ const setInstaFeed = (instaFeed) => {
     }
 
     el.section.append(instaWrap);
+}
+
+const setSocial = (siteSocial) => {
+    const socialWrapper = document.createElement('div');
+    socialWrapper.id = 'social-wrapper';
+
+    for(let i in siteSocial){
+        if( siteSocial[i] != null ){
+            
+        }
+    }
 }
 
 const getInstaPosts = async () => {
